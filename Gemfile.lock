@@ -40,6 +40,7 @@ GEM
     mustermann-grape (1.0.0)
       mustermann (~> 1.0.0)
     oj (3.3.5)
+    puma (3.10.0)
     rack (2.0.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -59,6 +60,7 @@ DEPENDENCIES
   faraday
   faraday_middleware-parse_oj (~> 0.3.2)
   grape
+  puma
 
 BUNDLED WITH
    1.14.6
