@@ -30,7 +30,7 @@ module Fipe
         builder.adapter Faraday.default_adapter
       end
 
-      @conn.headers['Referer'] = 'http://veiculos.fipe.org.br/'
+      @conn.headers['Referer'] = BASE_URL
     end
 
     def referencias
@@ -39,7 +39,7 @@ module Fipe
       response.body
     end
 
-    def marcas(tipo_veiculo, referencia = ultimo_periodo_referencia['Codigo'])
+    def marcas(tipo_veiculo, referencia)
       referencia ||= ultimo_periodo_referencia['Codigo']
 
       response = @conn.post('/api/veiculos/ConsultarMarcas',
@@ -49,7 +49,7 @@ module Fipe
       response.body
     end
 
-    def modelos(tipo_veiculo, marca, referencia = ultimo_periodo_referencia['Codigo'])
+    def modelos(tipo_veiculo, marca, referencia)
       referencia ||= ultimo_periodo_referencia['Codigo']
 
       response = @conn.post('/api/veiculos/ConsultarModelos',
@@ -60,7 +60,7 @@ module Fipe
       response.body['Modelos']
     end
 
-    def ano_modelos(tipo_veiculo, marca, modelo, referencia = ultimo_periodo_referencia['Codigo'])
+    def ano_modelos(tipo_veiculo, marca, modelo, referencia)
       referencia ||= ultimo_periodo_referencia['Codigo']
 
       response = @conn.post('/api/veiculos/ConsultarAnoModelo',
