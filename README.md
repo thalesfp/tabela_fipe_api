@@ -15,10 +15,10 @@ URL: https://tabela-fipe-api.herokuapp.com/v1
 | GET /:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos/:ano_modelo | Retorna informações sobre o ano modelo | tipo_veiculo, referencia |
 
 ## Parâmetros
-| Nome | Descrição | Valores | Obrigatório |
-|---|---|---|---|
-| tipo_veiculo | Tipo de veículo | carros ou motos | Sim |
-| referencia | Mês e ano de referência | inteiro | Não |
+| Nome | Descrição | Valores | Obrigatório | Valor Padrão |
+|---|---|---|---|---|
+| tipo_veiculo | Tipo de veículo | carros ou motos | Sim | |
+| referencia | Mês e ano de referência | inteiro | Não | Mês atual |
 
 ## Exemplo de requisição
 
