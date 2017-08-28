@@ -19,7 +19,7 @@ module Fipe
     desc 'Retorna as marcas dos veículos.'
     params do
       requires :tipo_veiculo, type: Veiculo, desc: 'Tipo de veículo'
-      optional :referencia, type: Integer
+      optional :referencia, type: Integer, desc: 'Mês de referência do preço'
     end
     get '/:tipo_veiculo/marcas' do
       tabela = Tabela.new
@@ -30,7 +30,7 @@ module Fipe
     params do
       requires :tipo_veiculo, type: Veiculo, desc: 'Tipo de veículo (carros ou motos)'
       requires :marca, type: Integer, desc: 'Código da marca'
-      optional :referencia, type: Integer
+      optional :referencia, type: Integer, desc: 'Mês de referência do preço'
     end
     get '/:tipo_veiculo/marcas/:marca/modelos' do
       tabela = Tabela.new
@@ -42,7 +42,7 @@ module Fipe
       requires :tipo_veiculo, type: Veiculo, desc: 'Tipo de veículo (carros ou motos)'
       requires :marca, type: Integer, desc: 'Código da marca'
       requires :modelo, type: Integer, desc: 'Código do modelo'
-      optional :referencia, type: Integer
+      optional :referencia, type: Integer, desc: 'Mês de referência do preço'
     end
     get '/:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos' do
       tabela = Tabela.new
@@ -55,7 +55,7 @@ module Fipe
       requires :marca, type: Integer, desc: 'Código da marca'
       requires :modelo, type: Integer, desc: 'Código do modelo'
       requires :ano_modelo, type: String, desc: 'Código do ano modelo'
-      optional :referencia, type: Integer
+      optional :referencia, type: Integer, desc: 'Mês de referência do preço'
     end
     get '/:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos/:ano_modelo' do
       tabela = Tabela.new
@@ -67,7 +67,7 @@ module Fipe
       requires :tipo_veiculo, type: Veiculo, desc: 'Tipo de veículo (carros ou motos)'
       requires :codigo_fipe, type: String, desc: 'Código de referência da tabela Fipe'
       requires :ano_modelo, type: String, desc: 'Código do ano modelo'
-      optional :referencia, type: Integer
+      optional :referencia, type: Integer, desc: 'Mês de referência do preço'
     end
     get '/:tipo_veiculo/codigo_fipe/:codigo_fipe/ano_modelos/:ano_modelo' do
       tabela = Tabela.new

@@ -10,15 +10,17 @@ URL: https://tabela-fipe-api.herokuapp.com/v1
 |---|---|---|
 | GET /referencias | Retorna os meses de referência |  |
 | GET /:tipo_veiculo/marcas | Retorna as marcas dos veículos | tipo_veiculo, referencia |
-| GET /:tipo_veiculo/marcas/:marca/modelos | Retorna os modelos da marca | tipo_veiculo, referencia |
-| GET /:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos | Retorna os ano modelos de um modelo | tipo_veiculo, referencia |
-| GET /:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos/:ano_modelo | Retorna informações sobre o ano modelo | tipo_veiculo, referencia |
+| GET /:tipo_veiculo/marcas/:marca/modelos | Retorna os modelos da marca | tipo_veiculo, marca, referencia |
+| GET /:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos | Retorna os ano modelos de um modelo | tipo_veiculo, marca, modelo, referencia |
+| GET /:tipo_veiculo/marcas/:marca/modelos/:modelo/ano_modelos/:ano_modelo | Retorna informações sobre o ano modelo | tipo_veiculo, marca, modelo, ano_modelo, referencia |
 | GET /:tipo_veiculo/codigo_fipe/:codigo_fipe/ano_modelos/:ano_modelo | Retorna informações sobre o ano modelo | tipo_veiculo, codigo_fipe, ano_modelo, referencia |
 
 ## Parâmetros
 | Nome | Descrição | Valores | Obrigatório | Valor Padrão |
 |---|---|---|---|---|
 | tipo_veiculo | Tipo de veículo | carros ou motos | Sim | |
+| marca | Marca do veículo | string | Sim | |
+| modelo | Modelo do veículo | string | Sim | |
 | ano_modelo | Modelo do veículo | string | Sim | |
 | codigo_fipe | Código de referência da tabela Fipe | string | Sim | |
 | referencia | Mês e ano de referência | inteiro | Não | Mês atual |
