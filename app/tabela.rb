@@ -88,6 +88,21 @@ module Fipe
       response.body
     end
 
+    def codigo_fipe(tipo_veiculo, codigo_fipe, ano_modelo, referencia)
+      referencia ||= ultimo_periodo_referencia['Codigo']
+      ano, combustivel = ano_modelo.split('-')
+
+      response = @conn.post('/api/veiculos/ConsultarValorComTodosParametros',
+        codigoTipoVeiculo: tipo_veiculo,
+        modeloCodigoExterno: codigo_fipe,
+        anoModelo: ano,
+        codigoTipoCombustivel: combustivel,
+        codigoTabelaReferencia: referencia,
+        tipoConsulta: 'codigo')
+
+      response.body
+    end
+
     private
 
     def ultimo_periodo_referencia

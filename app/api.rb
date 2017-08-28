@@ -61,5 +61,17 @@ module Fipe
       tabela = Tabela.new
       tabela.ano_modelo(params[:tipo_veiculo].value, params[:marca], params[:modelo], params[:ano_modelo], params[:referencia])
     end
+
+    desc 'Retorna informações sobre o ano modelo a partir do código Fipe.'
+    params do
+      requires :tipo_veiculo, type: Veiculo, desc: 'Tipo de veículo (carros ou motos)'
+      requires :codigo_fipe, type: String, desc: 'Código de referência da tabela Fipe'
+      requires :ano_modelo, type: String, desc: 'Código do ano modelo'
+      optional :referencia, type: Integer
+    end
+    get '/:tipo_veiculo/codigo_fipe/:codigo_fipe/ano_modelos/:ano_modelo' do
+      tabela = Tabela.new
+      tabela.codigo_fipe(params[:tipo_veiculo].value, params[:codigo_fipe], params[:ano_modelo], params[:referencia])
+    end
   end
 end
